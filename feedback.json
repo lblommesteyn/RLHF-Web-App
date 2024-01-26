@@ -1,0 +1,30 @@
+[
+    {
+        "sentence": "Considering how different parts of the ecosystem interact with each other is a key aspect of systems thinking.",
+        "classification": "Systems Thinking",
+        "confidence": "High",
+        "user_feedback": "Agree",
+        "user_name": "Luke"
+    },
+    {
+        "sentence": "Focusing only on short-term profits without considering long-term environmental impacts demonstrates a lack of systems thinking.",
+        "classification": "Non-Systems Thinking",
+        "confidence": "Medium",
+        "user_feedback": "Agree",
+        "user_name": "Luke"
+    },
+    {
+        "sentence": "Understanding the feedback loops in an organization's culture is essential for effective systems thinking.",
+        "classification": "Systems Thinking",
+        "confidence": "High",
+        "user_feedback": "Disagree",
+        "user_name": "Luke"
+    },
+    {
+        "sentence": "By analyzing the long-term impacts of industrial pollution on local ecosystems and community health, we can develop comprehensive strategies that address both environmental and socio-economic challenges",
+        "classification": "Non-Systems Thinking",
+        "confidence": "Low",
+        "user_feedback": "Disagree",
+        "user_name": "Luke"
+    }
+]

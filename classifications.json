@@ -1,0 +1,22 @@
+[
+    {
+        "sentence": "Considering how different parts of the ecosystem interact with each other is a key aspect of systems thinking.",
+        "classification": "Systems Thinking",
+        "confidence": "High"
+    },
+    {
+        "sentence": "Focusing only on short-term profits without considering long-term environmental impacts demonstrates a lack of systems thinking.",
+        "classification": "Non-Systems Thinking",
+        "confidence": "Medium"
+    },
+    {
+        "sentence": "Understanding the feedback loops in an organization's culture is essential for effective systems thinking.",
+        "classification": "Non-Systems Thinking",
+        "confidence": "High"
+    },
+    {
+        "sentence": "Ignoring the wider context and interdependencies in problem-solving often leads to non-systems thinking approaches.",
+        "classification": "Non-Systems Thinking",
+        "confidence": "Low"
+    }
+]

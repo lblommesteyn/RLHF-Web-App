@@ -1,0 +1,114 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Reinforcement Learning Feedback</title>
+        <style>
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+        body {
+            background-color: #f4f7fc;
+            font-family: "Open Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f7fc;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .classificationDropdown, .nameInput {
+            margin-bottom: 10px;
+            display: block;
+            width: fit-content;
+        }
+
+        .submitFeedback, .submitName {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        </style>
+            <script>
+                const jsonData = [
+                    {
+                        "sentence": "Considering how different parts of the ecosystem interact with each other is a key aspect of systems thinking.",
+                        "classification": "Systems Thinking",
+                        "confidence": "High"
+                    },
+                    {
+                        "sentence": "Focusing only on short-term profits without considering long-term environmental impacts demonstrates a lack of systems thinking.",
+                        "classification": "Non-Systems Thinking",
+                        "confidence": "Medium"
+                    },
+                    {
+                        "sentence": "Understanding the feedback loops in an organization's culture is essential for effective systems thinking.",
+                        "classification": "Non-Systems Thinking",
+                        "confidence": "High"
+                    },
+                    {
+                        "sentence": "Ignoring the wider context and interdependencies in problem-solving often leads to non-systems thinking approaches.",
+                        "classification": "Non-Systems Thinking",
+                        "confidence": "Low"
+                    }
+                ];
+        
+                let currentSentenceIndex = 0;
+        
+                document.addEventListener('DOMContentLoaded', function() {
+                    loadSentence(currentSentenceIndex);
+        
+                    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent form from actual submission and page reload
+                        currentSentenceIndex = (currentSentenceIndex + 1) % jsonData.length; // Increment and loop back if at the end
+                        loadSentence(currentSentenceIndex);
+                    });
+                });
+        
+                function loadSentence(index) {
+                    const item = jsonData[index];
+                    const container = document.getElementById('sentenceContainer');
+                    container.innerHTML = `
+                        <p>Sentence ${index + 1} of ${jsonData.length}:</p>
+                        <p>Sentence: ${item.sentence}</p>
+                        <p>Classification: ${item.classification}</p>
+                        <p>Confidence: ${item.confidence}</p>
+                        <hr>`;
+                }
+            </script>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Reinforcement Learning Feedback</h1>
+                <div id="sentenceContainer">
+                    <!-- Sentence will be loaded here -->
+                </div>
+                <form id="feedbackForm" method="POST" action="/">
+                    <label for="feedback">Provide Feedback:</label>
+                    <select class="classificationDropdown" id="feedback" name="feedback">
+                        <option value="agree">Agree</option>
+                        <option value="disagree">Disagree</option>
+                    </select>
+                    <button class="submitFeedback" type="submit">Submit</button>
+                    <br>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" class="nameInput">
+                    <button class="submitName" type="submit">Submit Name</button>
+                </form>
+            </div>
+        </body>
+        </html>
